@@ -16,3 +16,6 @@ project/plugins/project/
 
 # VSCode project files
 .vscode/
+
+# Motals extension files
+.metals/
