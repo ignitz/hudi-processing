@@ -13,3 +13,6 @@ project/plugins/project/
 
 # macOS stuffs
 .DS_Store
+
+# VSCode project files
+.vscode/
