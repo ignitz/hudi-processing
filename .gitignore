@@ -19,3 +19,4 @@ project/plugins/project/
 
 # Motals extension files
 .metals/
+**/.bloop
