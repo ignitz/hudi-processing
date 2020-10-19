@@ -22,6 +22,9 @@ libraryDependencies += "org.apache.spark" %% "spark-avro" % sparkVersion
 // Works with 2.7.4 on spark 2.4.4 scala 2.11
 libraryDependencies += "com.typesafe.play" %% "play-json" % "2.9.1"
 
+// AWS
+libraryDependencies += "com.amazonaws" % "aws-java-sdk-s3" % "1.11.427"
+
 assemblyMergeStrategy in assembly := {
   case PathList("META-INF", xs @ _*) => MergeStrategy.discard
   case x                             => MergeStrategy.first

@@ -11,8 +11,12 @@ import java.time.{LocalDateTime}
 import org.apache.hudi
 import org.apache.hudi.DataSourceWriteOptions
 import org.apache.hudi.config.HoodieWriteConfig
-
-class HudiHandler(sourcePath: String, targetPath: String, hudiPath: String) {
+class HudiHandler(
+    sourcePath: String,
+    sourceFormat: String,
+    targetPath: String,
+    hudiPath: String
+) {
   val logger = Logger.getLogger(getClass().getName())
 
   val spark = SparkSession.builder
@@ -38,6 +42,8 @@ class HudiHandler(sourcePath: String, targetPath: String, hudiPath: String) {
 
   def run(): Boolean = {
     // check if dataset exists
+    var df = spark.read.format(sourceFormat).load(sourcePath)
+    df.show()
     // if exists run only cdc dataset from Kafka
     // if not exists, then create a dataset with entire historical data
     // if hudiPath is equal then targetPath

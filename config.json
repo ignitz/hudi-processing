@@ -1,0 +1,22 @@
+{
+    "tables": [
+        {
+            "databaseName": "DATAFEEDER_register",
+            "tableName": "dbo_persons",
+            "sourcePath": "fs/s3/333728661073-dev-kafka-raw/kafka/cdc/DATAFEEDER_register.dbo.persons/",
+            "sourceFormat": "parquet",
+            "targetPath": "fs/hdfs/local/hudi/table/DATAFEEDER_register.dbo.persons",
+            "hudiParams": {
+                "hoodie.table.name": "DATAFEEDER_register.dbo.persons",
+                "hoodie.datasource.write.storage.type": "COPY_ON_WRITE",
+                "hoodie.datasource.write.recordkey.field": "id",
+                "hoodie.datasource.write.partitionpath.field": "created_at",
+                "hoodie.datasource.write.precombine.field": "updated_at",
+                "hoodie.cleaner.commits.retained": "1",
+                "hoodie.bulkinsert.shuffle.parallelism": "100",
+                "hoodie.insert.shuffle.parallelism": "100",
+                "hoodie.upsert.shuffle.parallelism": "100"
+            }
+        }
+    ]
+}
