@@ -24,3 +24,4 @@ project/project/
 
 # Test folders
 fs/
+.development

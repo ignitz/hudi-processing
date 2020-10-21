@@ -5,7 +5,8 @@
             "tableName": "dbo_persons",
             "sourcePath": "fs/s3/333728661073-dev-kafka-raw/kafka/cdc/DATAFEEDER_register.dbo.persons/",
             "sourceFormat": "parquet",
-            "targetPath": "fs/hdfs/local/hudi/table/DATAFEEDER_register.dbo.persons",
+            "targetPath": "fs/s3/333728661073-dev-kafka-staged/DATAFEEDER_register/dbo/persons",
+            "hudiPath": "fs/hdfs/local/hudi/table/DATAFEEDER_register.dbo.persons",
             "hudiParams": {
                 "hoodie.table.name": "DATAFEEDER_register.dbo.persons",
                 "hoodie.datasource.write.storage.type": "COPY_ON_WRITE",
